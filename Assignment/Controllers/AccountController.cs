@@ -3,15 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.Controllers
 {
-    public class ProductsController : Controller
+    public class AccountController : Controller
     {
+        [Authorize]
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        [Authorize(Roles = "Admin, Product Manager")]
-        public IActionResult Product()
         {
             return View();
         }
