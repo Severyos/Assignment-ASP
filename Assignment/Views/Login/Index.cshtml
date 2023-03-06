@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "_Layout";
+}
+<header>
+    <div class="container">
+        <div class="logo">
+            <picture>
+                <img src="images/logo.svg" alt="Cool picture lul">
+            </picture>
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Login" asp-action="Index">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <section class="registerform">
+        <div class="title">
+            <div class="headline">
+                <span>Please Login to Your Account</span>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <form>
+            <div class="form-group">
+                <div class="form-label">
+                    <label @*asp-for="Email"*@ class="control-label">Email*</label>
+                    <a asp-controller="Register" asp-action="Index">Don't have an account yet?</a>
+                </div>
+                <input @*asp-for="Email"*@ class="form-control" />
+            </div>
+            <div class="form-group">
+                <div class="d-flex justify-content-between">
+                    <label @*asp-for="Password"*@ class="control-label">Password</label>
+                    <a asp-controller="Register" asp-action="Index">Forgot your pw?</a>
+                </div>
+                <input @*asp-for="Password"*@ class="form-control" />
+            </div>
+        </form>
+        <button type="submit" value="Submit">Submit</button>
+    </section>
+</div>
+<footer>
+    <div class="copyright-text">
+        &copy; 2023 bmerketo. All Rights Reserved.
+    </div>
+</footer>

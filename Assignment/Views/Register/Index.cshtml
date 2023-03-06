@@ -1,0 +1,55 @@
+﻿<header>
+    <div class="container">
+        <div class="logo">
+            <picture>
+                <img src="images/logo.svg" alt="Cool picture lul">
+            </picture>
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Login" asp-action="Index">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <section class="registerform">
+        <div class="title">
+            <div class="headline">
+                <span>Please Login to Your Account</span>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <form asp-action="Index" method="post" asp-route-ReturnUrl="@Model.ReturnUrl" novalidate>
+            <div class="form-group">
+                <div class="form-label">
+                    <label for="firstname">Firstname:</label>
+                    <input id="firstname" name="firstname" type="text" /><br />
+                    <label for="lastname">Lastname:</label>
+                    <input id="lastname" name="lastname" type="text" /><br />
+                    <label for="streetname">Streetname:</label>
+                    <input id="streetname" name="streetname" type="text" /><br />
+                    <label for="postalcode">Postalcode:</label>
+                    <input id="postalcode" name="postalcode" type="text" /><br />
+                    <label for="city">City:</label>
+                    <input id="city" name="city" type="text" /><br />
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="text" /><br />
+                    <label for="password">Password:</label>
+                    <input id="password" name="password" type="password" /><br />
+                    <label for="cpassword">Confirm Password:</label>
+                    <input id="cpassword" name="cpassword" type="password" /><br />
+               </div>
+            </div>
+            <button type="submit">GO</button>
+            <p class="mt-3 text-center">Already have an Account? <a asp-controller="Login">Login</a></p>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <div class="copyright-text">
+        &copy; 2023 bmerketo. All Rights Reserved.
+    </div>
+</footer>

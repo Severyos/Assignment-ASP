@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Assignment.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
-        [Authorize]
-        public IActionResult Index()
+        private readonly UserService _userService;
+
+        public AccountController(UserService userService)
         {
-            return View();
+            _userService = userService;
+        }
+
+        
+        public async Task<IActionResult> Index(string id)
+        {
+            var userAccount = await _userService.GetUserAccountAsync(id);
+            return View(userAccount);
         }
     }
 }

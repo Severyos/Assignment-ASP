@@ -1,18 +1,23 @@
 ﻿using Assignment.Models.Forms;
 using Assignment.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Assignment.Controllers
 {
     public class RegisterController : Controller
     {
 
-        private readonly AuthService _auth;
+        private readonly AuthService _authService;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public RegisterController(AuthService auth)
+        public RegisterController(AuthService authService, UserManager<IdentityUser> userManager)
         {
-            _auth = auth;
+            _authService = authService;
+            _userManager = userManager;
         }
+
 
         public IActionResult Index(string ReturnUrl = null!)
         {
@@ -25,13 +30,19 @@ namespace Assignment.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (await _auth.RegisterAsync(form))
+                if (await _userManager.Users.AnyAsync(x => x.Email == form.Email))
+                {
+                    ModelState.AddModelError(string.Empty, "A User with the same email already exists.");
+                    return View(form);
+                }
+                
+                if (await _authService.RegisterAsync(form))
                     return LocalRedirect(form.ReturnUrl!);
                 else
-                    return View();
+                    return View(form);
             }
 
-            return View();
+            return View(form);
         }
     }
 }

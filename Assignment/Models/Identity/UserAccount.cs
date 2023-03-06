@@ -1,18 +1,16 @@
-﻿namespace Assignment.Models.Forms
+﻿namespace Assignment.Models.Identity
 {
-    public class RegisterForm
+    public class UserAccount
     {
-        public string? ReturnUrl { get; set; }
+        public string Id { get; set; } = null!;
+        public string UserId { get; set; } = null!;
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
-        public string? Company { get; set; }
         public string Email { get; set; } = null!;
         public string? PhoneNumber { get; set; }
-        public string Password { get; set; } = null!;
-        public string ConfirmPassword { get; set; } = null!;
         public string StreetName { get; set; } = null!;
         public string PostalCode { get; set; } = null!;
         public string City { get; set; } = null!;
-        public bool TermsAndAggrements { get; set; }
+        public string? Company { get; set; }
     }
 }

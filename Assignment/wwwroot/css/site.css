@@ -1,22 +1,468 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Roboto:ital,wght@0,500;0,900;1,400&display=swap');
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 1920px;
+    max-width: 100%;
+    margin: auto;
+    padding: 0 18px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    height: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+    header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .logo {
+        display: inline-block;
+        font-size: 26px;
+        margin-left: 384px;
+    }
+
+    header nav {
+        display: inline-block;
+    }
+
+        header nav ul li {
+            display: inline-block;
+        }
+
+            header nav ul li a {
+                color: #6b6b6b;
+                font-size: 15px;
+                letter-spacing: 0.37px;
+                text-decoration: none;
+                margin-right: 15px;
+            }
+
+            header nav ul li:last-of-type a {
+                margin-right: 384px;
+            }
+
+/* Herobanner */
+
+.heroforsta {
+    width: 1920px;
+    height: 647px;
+    background: #F3F2F2;
+    margin-top: 70px;
+}
+
+    .heroforsta .container {
+        height: 747px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .heroforsta .container .content {
+            flex: 1;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+            .heroforsta .container .content .titles {
+                margin-left: 300px;
+            }
+
+        .heroforsta .container .herocontainer img {
+            flex: 1;
+            width: auto;
+            height: 100%;
+        }
+
+.herocontainer {
+    height: 625px;
+    width: 647px;
+    margin-right: 200px;
+}
+
+.title-1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.title-2 {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+
+footer .copyright-text {
+    color: white;
+    background-color: #2B2B2B;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    line-height: 22px;
+}
+
+/* Regga och login */
+
+.registerform {
+    width: 1110px;
+    border: 1px solid rgb(234, 234, 234);
+    color: #636363;
+    padding: 30px;
+}
+
+    .registerform .title .headline {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .registerform .title .underline {
+        margin-top: 5px;
+        margin-bottom: 35px;
+        border-top: 1px solid black;
+        width: 30%;
+    }
+
+    .registerform .form-group {
+        margin-bottom: 20px;
+    }
+
+    .registerform a {
+        font-size: 14px;
+        color: #FA3150;
+        text-decoration: none;
+    }
+
+    .registerform input {
+        border-color: #222121;
+        border-radius: 0;
+    }
+
+.form-control {
+    background-color: #FAFAFA;
+}
+
+/* Knappar */
+
+.button {
+    height: 50px;
+    width: 220px;
+    max-width: 100%;
+    border-radius: 92px;
+    background-color: #a11313;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+    .button:hover {
+        color: #a11313;
+        background-color: #FFF;
+        border: 2px solid #a11313;
+    }
+
+button {
+    height: 50px;
+    width: 220px;
+    max-width: 100%;
+    border-radius: 92px;
+    background-color: #a11313;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+    button:hover {
+        color: #a11313;
+        background-color: #FFF;
+        border: 2px solid #a11313;
+    }
+
+/* Maila mig */
+
+section.mailme {
+    background-color: rgba(200, 200, 200, 0.18);
+    max-width: 955px;
+    text-align: center;
+    padding: 72px 0;
+    margin: 80px auto;
+}
+
+    section.mailme h3 {
+        font-size: 24px;
+        letter-spacing: 0.6px;
+        line-height: 42px;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    section.mailme p {
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        line-height: 42px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    section.mailme form {
+        display: flex;
+        justify-content: center;
+    }
+
+        section.mailme form input {
+            height: 50px;
+            width: 326px;
+            max-width: 80%;
+            border-radius: 60px 0 0 60px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-right: none;
+            color: #3E3E3E;
+            font-family: Heebo;
+            font-size: 14px;
+            letter-spacing: 0.35px;
+            line-height: 21px;
+            padding-left: 22px;
+        }
+
+        section.mailme form button {
+            height: 50px;
+            width: 145px;
+            max-width: 20%;
+            box-sizing: border-box;
+            border-radius: 0 60px 60px 0;
+            background-color: #a11313;
+            border: 1px solid #a11313;
+            color: #FFF;
+            font-size: 14px;
+            letter-spacing: 0.35px;
+            line-height: 21px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+            section.mailme form button:hover {
+                color: #ffffff;
+                border: 1px solid #000000;
+                background-color: rgb(0, 0, 0);
+                border: 1px solid #000000;
+            }
+
+/* Frontpage-ish */
+
+section.frontpage {
+    padding-top: 80px;
+}
+
+    section.frontpage h2 {
+        text-align: center;
+        font-size: 48px;
+        letter-spacing: 0.85px;
+        line-height: 42px;
+        font-weight: normal;
+        margin: 0 0 15px 0;
+        font-weight: 700;
+    }
+
+.mjau {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.85px;
+    line-height: 42px;
+    font-weight: normal;
+    margin: 0 0 15px 0;
+}
+
+section.frontpage .common {
+    margin-top: 76px;
+    margin-bottom: 50px;
+}
+
+section.frontpage .container {
+    display: flex;
+    padding: 0 8px;
+    max-width: 1170px;
+}
+
+section.frontpage .common .favs {
+    width: 25%;
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.frontpage .common .squares-picture img {
+    max-width: 100%;
+}
+
+section.frontpage .common .favs .squares-info {
+    margin-top: 10px;
+}
+
+    section.frontpage .common .favs .squares-info .title {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+        font-weight: normal;
+        margin-top: 0;
+    }
+
+    section.frontpage .common .favs .squares-info .age {
+        font-weight: normal;
+        font-size: 14px;
+        letter-spacing: 0.35px;
+        margin-bottom: 8px;
+        margin-top: 0;
+    }
+
+.knappenimitten {
+    display: flex;
+    justify-content: center;
+}
+
+/* Lillfrontp */
+
+.frontpage2 .common {
+    margin-top: 76px;
+    margin-bottom: 50px;
+    background: #FAEFEF;
+}
+
+.frontpage2 .container {
+    display: flex;
+    max-width: 1170px;
+    align-items: center;
+}
+
+.frontpage2 .common .favs {
+    width: 33%;
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .frontpage2 .common .favs .squares-info .title {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+        font-weight: normal;
+        margin-top: 10px;
+    }
+
+    .frontpage2 .common .favs .squares-info .age {
+        font-weight: normal;
+        font-size: 16px;
+        letter-spacing: 0.35px;
+        margin-bottom: 8px;
+        margin-top: 15px;
+        text-decoration: line-through;
+    }
+
+.frontpage2 .common .squares-picture img {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.squares {
+    text-align: center;
+}
+
+/* produktsida */
+
+.herobannerprodukt {
+    margin-top: 70px;
+}
+
+.heroprodukt {
+    max-width: 1920px;
+    height: auto;
+    margin-top: 70px;
+}
+
+.heroprodcontain {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1170px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.heroprodukt .heroprodcontain .prodcontent {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+}
+
+    .heroprodukt .heroprodcontain .prodcontent .prodp .prodp2 {
+        margin-right: 5px;
+    }
+
+.heroprodukt .heroprodcontain .firstprodsect img {
+    flex: 1;
+    justify-content: left;
+    width: auto;
+    height: auto;
+}
+
+.prodp {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.prodp2 {
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+.prodknappar {
+    margin-top: 50px;
+}
+
+.prodalotoftext {
+    margin-top: 50px;
+    display: flex;
+    justify-content: left;
+}
+
+.sistabilden {
+    margin-top: 50px;
 }
